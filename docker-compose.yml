@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  countries:
+    build: countries
+  airports:
+    build: airports
+  nginx:
+    build: nginx
+    ports:
+      - "8000:8000"
+    links:
+      - airports
+      - countries
+
